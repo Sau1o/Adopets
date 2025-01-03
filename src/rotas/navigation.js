@@ -7,6 +7,7 @@ import Cadastro from '../paginas/Cadastro';
 import ListaPets from '../paginas/ListaPets';
 import Mensagem from '../paginas/Mensagem';
 import { Image } from 'react-native';
+import Sobre from '../paginas/Sobre';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,6 +50,7 @@ const Navigation = () => {
             <Stack.Screen name='Login' component={Login}/>
             <Stack.Screen name='Cadastro' component={Cadastro}/>
             <Stack.Screen name='Tab' component={TabRoutes}/>
+            <Stack.Screen name='Sobre' component={Sobre} />
             </Stack.Navigator>
     </NavigationContainer>
   );
