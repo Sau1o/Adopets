@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from '../paginas/Home';
 import Login from '../paginas/Login';
 import Cadastro from '../paginas/Cadastro';
@@ -8,9 +9,21 @@ import ListaPets from '../paginas/ListaPets';
 import Mensagem from '../paginas/Mensagem';
 import { Image } from 'react-native';
 import Sobre from '../paginas/Sobre';
+import Perfil from '../paginas/Perfil';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+
+const DrawerRoutes = () => {
+    return(
+        <Drawer.Navigator>
+            <Drawer.Screen name='Lista de Pets' component={ListaPets}/>
+            <Drawer.Screen name='Perfil' component={Perfil}/>
+            <Drawer.Screen name='Sair' component={Home} />
+        </Drawer.Navigator>
+    )
+}
 
 const TabRoutes = () => {
     return(
@@ -51,6 +64,7 @@ const Navigation = () => {
             <Stack.Screen name='Cadastro' component={Cadastro}/>
             <Stack.Screen name='Tab' component={TabRoutes}/>
             <Stack.Screen name='Sobre' component={Sobre} />
+            <Stack.Screen name='DrawerRoutes' component={DrawerRoutes} />
             </Stack.Navigator>
     </NavigationContainer>
   );
